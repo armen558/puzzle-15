@@ -1,0 +1,31 @@
+h1 {
+    color: #cae2e6;
+    text-align: center;
+    font-size: 44px;
+}
+
+.puzzle {
+    width: 400px;
+    height: 400px;
+    background: #cae2e6;
+    position: relative;
+    border-radius: 5px;
+    margin: auto;
+    box-shadow: 0 5px 20px -15px black;
+}
+
+.winScreen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: inherit;
+    padding: 20px;
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}

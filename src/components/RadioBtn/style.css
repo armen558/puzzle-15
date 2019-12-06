@@ -1,0 +1,19 @@
+.sizeSelect {
+    margin: 30px auto 20px auto;
+    text-align: center;
+    color: #80a9b1;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.sizeSelect input {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px 0 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sizeSelect input:first-child {
+    margin-left: 0;
+}

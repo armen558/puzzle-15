@@ -1,0 +1,46 @@
+.btnWrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.resetBtn {
+    background: #cae2e6;;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    outline: none;
+    display: block;
+    box-shadow: 0 5px 20px -12px black;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin: 0 15px;
+}
+.resetBtn:hover,
+.resetBtn:active,
+.newGameBtn:hover,
+.newGameBtn:active {
+    box-shadow: 0 5px 15px -12px black;
+}
+
+.newGameBtn {
+    background: #cae2e6;;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    margin: 20px auto;
+    outline: none;
+    display: block;
+    box-shadow: 0 5px 20px -12px black;
+    cursor: pointer;
+    transition: all 0.3s;
+}
