@@ -7,7 +7,6 @@ import StepsCount from '../StepsCount/';
 import TimeTrack from '../Timer';
 import './style.css'
 
-
 const PuzzleWrap = props => {
     return (
         <div className="container">

@@ -4,7 +4,6 @@ import Button from '../Button/index';
 import { timeFormat } from '../../helpers/timeFormat';
 import './style.css'
 
-
 const Backdrop = props => {
     return (
         <div className="backdrop">

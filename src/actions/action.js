@@ -1,5 +1,5 @@
 import { generateInitialArray } from '../helpers/generateArr';
-import store from '../helpers/store';
+import store from '../store';
 
 export const changePosition = data => {
     let arr = store.getState().numbers;
