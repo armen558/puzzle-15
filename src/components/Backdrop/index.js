@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Button from '../Button/index';
 import { timeFormat } from '../../helpers/timeFormat';
-import './style.css'
+import './style.scss'
 
 const Backdrop = props => {
+    useEffect(() => {
+        props.pauseGame();
+    }, []);
+
     return (
         <div className="backdrop">
             <div className="congrats">

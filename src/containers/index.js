@@ -16,8 +16,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         changePosition: (currentIndex, emptyIndex) => dispatch(changePosition({currentIndex, emptyIndex})),
-        resetGame: () => dispatch(resetGame()),
-        sizeChange: (size) => dispatch(sizeChange(size)),
         pauseGame: () => dispatch(pauseGame())
     }
 };

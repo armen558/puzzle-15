@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { timeFormat } from '../../helpers/timeFormat';
-import './style.css';
+
+import './style.scss';
 
 const TimeTrack = props => {
     return (

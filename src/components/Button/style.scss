@@ -6,7 +6,7 @@
 }
 
 .resetBtn {
-    background: #cae2e6;;
+    background: #b1d4da;
     color: white;
     border: none;
     border-radius: 5px;
@@ -16,20 +16,19 @@
     padding: 10px 30px;
     outline: none;
     display: block;
-    box-shadow: 0 5px 20px -12px black;
+    box-shadow: 0 0 20px -5px rgba(0,0,0,0.5);
     cursor: pointer;
     transition: all 0.3s;
     margin: 0 15px;
-}
-.resetBtn:hover,
-.resetBtn:active,
-.newGameBtn:hover,
-.newGameBtn:active {
-    box-shadow: 0 5px 15px -12px black;
+
+    &:hover,
+    &:active {
+        box-shadow: 0 0 20px -8px rgba(0,0,0,0.5);
+    }
 }
 
 .newGameBtn {
-    background: #cae2e6;;
+    background: #b1d4da;
     color: white;
     border: none;
     border-radius: 5px;
@@ -43,4 +42,9 @@
     box-shadow: 0 5px 20px -12px black;
     cursor: pointer;
     transition: all 0.3s;
+
+    &:hover,
+    &:active {
+        box-shadow: 0 5px 15px -12px black;
+    }
 }

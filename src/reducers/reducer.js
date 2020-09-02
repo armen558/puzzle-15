@@ -1,41 +1,56 @@
 import { generateInitialArray } from '../helpers/generateArr';
+import * as actionTypes from '../actions/actionTypes';
 
-const numberArray = generateInitialArray(5);
+let size = 4;
+// const numberArray = generateInitialArray(size);
 
-// const numberArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,0,14,15];
+const numberArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,0,14,15];
 
 let initialState = {
-    size: 5,
+    size: size,
     numbers: numberArray,
     steps: 0,
-    isPaused: true,
+    isPaused: false,
+    time: 0
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'CHANGE_POSITION':
+        case actionTypes.CHANGE_POSITION:
             return {
                 ...state,
                 steps: state.steps + 1,
                 numbers: action.payload,
             };
-        case 'NEW_GAME':
+        case actionTypes.NEW_GAME:
             return {
                 ...state,
                 steps: 0,
                 numbers: action.payload,
+                isPaused: false
             };
-        case 'SIZE_CHANGE':
+        case actionTypes.SIZE_CHANGE:
             return {
                 ...state,
                 size: action.payload,
                 numbers: generateInitialArray(action.payload),
                 steps: 0,
+                time: 0
             }
-        case 'PAUSE':
+        case actionTypes.PAUSE_GAME:
             return {
                 ...state,
                 isPaused: !state.isPaused,
+            }
+        case actionTypes.TIMER_UPDATE:
+            return {
+                ...state,
+                time: state.time + 1
+            }
+        case actionTypes.TIMER_RESET:
+            return {
+                ...state,
+                time: 0
             }
         default:
             return state;
