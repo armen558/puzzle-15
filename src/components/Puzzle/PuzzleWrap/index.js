@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Backdrop from '../../Backdrop';
 import Button from '../../Button';
@@ -14,10 +15,9 @@ import './style.scss'
 const PuzzleWrap = props => {
 
     let hasWon = checkArray(props.numberArray);
-
     useEffect(() => {
         let interval = null;
-        if(!props.isPaused && !hasWon) {
+        if (!props.isPaused && !hasWon) {
             interval = setInterval(() => {
                 props.onTimerUpdate();
             }, 1000)
@@ -26,7 +26,7 @@ const PuzzleWrap = props => {
         }
         return () => clearInterval(interval);
     }, [props.isPaused])
-    
+
 
     const resetHandler = () => {
         props.onResetGame(props.size);
@@ -38,37 +38,37 @@ const PuzzleWrap = props => {
             <h1>15 Puzzle</h1>
             <RadioBtn />
             <div className="flex">
-                <TimeTrack seconds={props.time}/>
-                <StepsCount stepsCount={props.steps}/>
+                <TimeTrack seconds={props.time} />
+                <StepsCount stepsCount={props.steps} />
             </div>
-            <div className="puzzle">    
-                {hasWon ? (
+            <div className="puzzle">
+                {hasWon && (
                     <Backdrop
                         pauseGame={props.pauseGame}
-                        resetGame={resetHandler} 
+                        resetGame={resetHandler}
                         steps={props.steps}
-                        seconds={props.time}    
+                        seconds={props.time}
                     />
-                ) : null}           
+                )}
                 {props.children}
             </div>
             {
-                !hasWon ? (
-                <div className="btnWrap">
-                <Button
-                    class="resetBtn"
-                    onButtonClick={resetHandler}
-                >
-                    Reset
-                </Button>
-                <Button
-                    class="resetBtn"
-                    onButtonClick={props.pauseGame}
-                >
-                    {props.isPaused ? 'Resume' : 'Pause'}
-                </Button>
-                </div>
-                ) : null
+                !hasWon && (
+                    <div className="btnWrap">
+                        <Button
+                            class="resetBtn"
+                            onButtonClick={resetHandler}
+                        >
+                            Reset
+                        </Button>
+                        <Button
+                            class="resetBtn"
+                            onButtonClick={props.pauseGame}
+                        >
+                            {props.isPaused ? 'Resume' : 'Pause'}
+                        </Button>
+                    </div>
+                )
             }
         </div>
     )
@@ -91,5 +91,11 @@ const mapDispatchToProps = dispatch => {
         onGamePause: () => dispatch(actions.pauseGame())
     };
 };
+
+PuzzleWrap.propTypes = {
+    isPaused: PropTypes.bool.isRequired,
+    size: PropTypes.number.isRequired,
+    time: PropTypes.number.isRequired
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(PuzzleWrap);

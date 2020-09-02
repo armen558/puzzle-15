@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import Puzzle from '../components/Puzzle';
 
-import { changePosition, resetGame, sizeChange, pauseGame } from '../actions/action';
+import { changePosition, pauseGame } from '../actions/action';
 
 const mapStateToProps = (state) => {
     return {
