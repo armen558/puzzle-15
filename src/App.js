@@ -1,11 +1,7 @@
-import React from 'react';
-
 import Puzzle from './containers';
 
 function App() {
-  return (
-    <Puzzle />
-  );
+  return <Puzzle />;
 }
 
 export default App;

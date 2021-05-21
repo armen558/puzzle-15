@@ -1,11 +1,9 @@
-import React from 'react';
+import { memo } from 'react';
 
-import './style.scss'
+import './style.scss';
 
-const StepsCount = (props) => {
-    return (
-        <div className="steps">Steps: {props.stepsCount}</div>
-    )
-}
+const StepsCount = ({ stepsCount }) => {
+  return <div className="steps">Steps: {stepsCount}</div>;
+};
 
-export default StepsCount;
+export default memo(StepsCount);

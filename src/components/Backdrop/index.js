@@ -1,27 +1,27 @@
-import React, { useEffect } from 'react';
+import { useEffect, memo } from 'react';
 
+import { timeFormat } from '../../utils/helpers';
 import Button from '../Button/index';
-import { timeFormat } from '../../helpers/timeFormat';
-import './style.scss'
 
-const Backdrop = props => {
-    useEffect(() => {
-        props.pauseGame();
-    }, []);
+import './style.scss';
 
-    return (
-        <div className="backdrop">
-            <div className="congrats">
-                YOU WON!
-            <p>{'Time: ' + timeFormat(props.seconds)}</p>
-            <p>{'Steps: ' + props.steps}</p>
-            </div>
-            <Button 
-                class="newGameBtn"
-                onButtonClick={props.resetGame}
-            >New game</Button>
-        </div>
-    )
-}
+const Backdrop = ({ seconds, steps, resetGame, pauseGame }) => {
+  useEffect(() => {
+    pauseGame();
+  }, []);
 
-export default Backdrop;
+  return (
+    <div className="backdrop">
+      <div className="congrats">
+        YOU WON!
+        <p>{'Time: ' + timeFormat(seconds)}</p>
+        <p>{'Steps: ' + steps}</p>
+      </div>
+      <Button class="newGameBtn" onButtonClick={resetGame}>
+        New game
+      </Button>
+    </div>
+  );
+};
+
+export default memo(Backdrop);

@@ -1,15 +1,11 @@
-import React from 'react';
+import { memo } from 'react';
 
-import { timeFormat } from '../../helpers/timeFormat';
+import { timeFormat } from '../../utils/helpers';
 
 import './style.scss';
 
-const TimeTrack = props => {
-    return (
-        <div className="timer">
-            Time: {timeFormat(props.seconds)}
-        </div>
-    )
+const TimeTrack = ({ seconds }) => {
+  return <div className="timer">Time: {timeFormat(seconds)}</div>;
 };
 
-export default TimeTrack;
+export default memo(TimeTrack);

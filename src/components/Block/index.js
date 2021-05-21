@@ -1,24 +1,24 @@
-import React from 'react';
+import { memo } from 'react';
 
-import './style.scss'
+import './style.scss';
 
-const Block = (props) => {
-    return (
-        <div 
-            className="block" 
-            onClick={props.clicked}
-            style={{
-                fontSize: props.fontSize,
-                height: props.width,
-                left: props.left, 
-                lineHeight: props.width,
-                top: props.top,
-                width: props.width,
-            }}
-        >
-            {props.number}
-        </div>
-    )
-}
+const Block = ({ clicked, width, left, top, fontSize, number }) => {
+  return (
+    <div
+      className="block"
+      onClick={clicked}
+      style={{
+        fontSize: fontSize,
+        height: width,
+        left: left,
+        lineHeight: width,
+        top: top,
+        width: width,
+      }}
+    >
+      {number}
+    </div>
+  );
+};
 
-export default Block;
+export default memo(Block);

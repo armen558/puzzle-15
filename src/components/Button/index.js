@@ -1,16 +1,13 @@
-import React from 'react';
+import { memo } from 'react';
 
-import './style.scss'
+import './style.scss';
 
-const Button = (props) => {
-    return (
-        <button 
-            className={props.class}
-            onClick={props.onButtonClick}
-        >
-            {props.children}
-        </button>
-    )
-}
+const Button = ({ rootClass, onButtonClick, children }) => {
+  return (
+    <button className={rootClass} onClick={onButtonClick}>
+      {children}
+    </button>
+  );
+};
 
-export default Button;
+export default memo(Button);
