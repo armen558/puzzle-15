@@ -1,14 +1,15 @@
 .radioInput {
   height: 15px;
   width: 15px;
-  margin: 0 5px 0 20px;
   display: inline-block;
   cursor: pointer;
-
-  &:first-child {
-    margin-left: 0;
-  }
+  margin: 0 5px 0 0;
 }
 .radioInputLabel {
   cursor: pointer;
+  margin: 0 5px 0 20px;
+  
+  &:first-child {
+    margin-left: 0;
+  }
 }

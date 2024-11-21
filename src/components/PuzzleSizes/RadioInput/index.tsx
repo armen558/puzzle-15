@@ -4,7 +4,7 @@ import './style.scss';
 
 const RadioInput = ({ checked, onChange, size }) => {
   return (
-    <>
+    <label className="radioInputLabel">
       <input
         id={`choice${size}`}
         type="radio"
@@ -14,11 +14,9 @@ const RadioInput = ({ checked, onChange, size }) => {
         onChange={onChange}
         className="radioInput"
       />
-      <label
-        htmlFor={`choice${size}`}
-        className="radioInputLabel"
-      >{`${size}x${size}`}</label>
-    </>
+
+      {`${size}x${size}`}
+    </label>
   );
 };
 

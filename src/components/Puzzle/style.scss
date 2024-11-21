@@ -4,6 +4,13 @@ h1 {
     font-size: 44px;
 }
 
+.puzzle-root {
+    margin: 0 auto; 
+    padding: 0 20px;
+    width: 100%;
+    max-width: 480px;
+}
+
 .puzzle {
     width: 400px;
     height: 400px;

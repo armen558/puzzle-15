@@ -2,17 +2,17 @@ import { memo } from 'react';
 
 import './style.scss';
 
-const Block = ({ clicked, width, left, top, fontSize, number }) => {
+const Block = ({ onClick, width, left, top, fontSize, number }) => {
   return (
     <div
       className="block"
-      onClick={clicked}
+      onClick={onClick}
       style={{
         fontSize: fontSize,
         height: width,
         left: left,
         lineHeight: width,
-        top: top,
+        '--top': top,
         width: width,
       }}
     >

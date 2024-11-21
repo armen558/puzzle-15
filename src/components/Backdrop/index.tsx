@@ -17,7 +17,7 @@ const Backdrop = ({ seconds, steps, resetGame, pauseGame }) => {
         <p>{'Time: ' + timeFormat(seconds)}</p>
         <p>{'Steps: ' + steps}</p>
       </div>
-      <Button class="newGameBtn" onButtonClick={resetGame}>
+      <Button className="newGameBtn" onClick={resetGame}>
         New game
       </Button>
     </div>
