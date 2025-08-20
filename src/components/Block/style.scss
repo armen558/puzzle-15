@@ -8,6 +8,8 @@
     vertical-align: middle;
     border-radius: 5px;
     box-shadow: 0 0 5px -1px rgb(88, 104, 95);
+    transition: all 0.3s ease !important;
+    top: var(--top);
 }
 
 .shake {
